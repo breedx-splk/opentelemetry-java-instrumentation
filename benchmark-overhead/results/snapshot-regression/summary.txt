@@ -1,21 +1,21 @@
 ----------------------------------------------------------
- Run at Sat Sep 18 06:01:38 UTC 2021
+ Run at Sun Sep 19 06:00:24 UTC 2021
  snapshot-regression : compares the latest snapshot to the latest stable release
  5 users, 5000 iterations
 ----------------------------------------------------------
 Agent               :            latest         snapshot
-Avg. CPU (user)     :        0.51735497        0.5196874
-Max. CPU (user)     :         0.6482412        0.6532663
-Startup time (ms)   :             15539            16097
-Total allocated MB  :          14602.44         13790.29
-Heap (min)          :          62884352         66165248
-Heap (max)          :         315056128        335494144
-Thread switch rate  :          35852.33        35550.168
-GC time             :        2299636175       1764711508
-Req. mean           :             10.23            10.19
-Req. p95            :             32.78            32.27
-Iter. mean          :            139.41           139.68
-Iter. p95           :            219.08           215.91
-Net read avg (bps)  :        5932769.00       5913929.00
-Net write avg (bps) :       31100519.00      30774805.00
+Avg. CPU (user)     :         0.5462306        0.5489969
+Max. CPU (user)     :        0.68844223        0.6482412
+Startup time (ms)   :             17464            17444
+Total allocated MB  :          14123.08         13755.79
+Heap (min)          :          64464896         62914560
+Heap (max)          :         306859520        316669952
+Thread switch rate  :          34395.86         39685.53
+GC time             :        2323558308       2127105449
+Req. mean           :              9.99             9.97
+Req. p95            :             31.19            31.20
+Iter. mean          :            135.96           135.32
+Iter. p95           :            212.89           207.40
+Net read avg (bps)  :        6074408.00       6110803.00
+Net write avg (bps) :       31764757.00      32028561.00
 Peak threads        :                47               46
