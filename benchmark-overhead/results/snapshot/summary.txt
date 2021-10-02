@@ -1,21 +1,21 @@
 ----------------------------------------------------------
- Run at Fri Oct 01 05:28:57 UTC 2021
+ Run at Sat Oct 02 05:28:36 UTC 2021
  snapshot : compares the latest snapshot to no agent
  5 users, 5000 iterations
 ----------------------------------------------------------
 Agent               :              none         snapshot
-Avg. CPU (user)     :         0.5364342        0.5280056
-Max. CPU (user)     :         0.7676768       0.64179105
-Startup time (ms)   :             10823            18590
-Total allocated MB  :           9823.82         14014.46
-Heap (min)          :          52158464         61445120
-Heap (max)          :         255233536        302688256
-Thread switch rate  :         28709.188        35184.617
-GC time             :        2016883877       2231269947
-Req. mean           :             11.79            12.39
-Req. p95            :             36.81            39.28
-Iter. mean          :            160.74           169.95
-Iter. p95           :            257.57           260.31
-Net read avg (bps)  :        5094324.00       4857271.00
-Net write avg (bps) :        7299298.00      25406231.00
+Avg. CPU (user)     :         0.5448837        0.5340444
+Max. CPU (user)     :         0.8241206        0.6532663
+Startup time (ms)   :             10876            18738
+Total allocated MB  :           9382.80         14016.70
+Heap (min)          :          51904512         64334336
+Heap (max)          :         267146784        317342208
+Thread switch rate  :         30253.723        30951.096
+GC time             :        2105984341       2258513904
+Req. mean           :             11.83            12.27
+Req. p95            :             36.97            38.27
+Iter. mean          :            160.95           168.03
+Iter. p95           :            260.18           255.10
+Net read avg (bps)  :        5084724.00       4923881.00
+Net write avg (bps) :        7288005.00      25805478.00
 Peak threads        :                41               47
