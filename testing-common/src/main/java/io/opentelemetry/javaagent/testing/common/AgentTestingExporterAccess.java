@@ -5,7 +5,6 @@
 
 package io.opentelemetry.javaagent.testing.common;
 
-import static com.google.common.base.Strings.emptyToNull;
 import static io.opentelemetry.api.common.AttributeKey.booleanArrayKey;
 import static io.opentelemetry.api.common.AttributeKey.doubleArrayKey;
 import static io.opentelemetry.api.common.AttributeKey.longArrayKey;
@@ -79,6 +78,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import javax.annotation.Nullable;
 
 public final class AgentTestingExporterAccess {
   private static final char TRACESTATE_KEY_VALUE_DELIMITER = '=';
@@ -235,6 +235,11 @@ public final class AgentTestingExporterAccess {
       }
     }
     return spans;
+  }
+
+  @Nullable
+  private static String emptyToNull(String string) {
+    return (string == null || string.isEmpty()) ? null : string;
   }
 
   @SuppressWarnings("unchecked")
