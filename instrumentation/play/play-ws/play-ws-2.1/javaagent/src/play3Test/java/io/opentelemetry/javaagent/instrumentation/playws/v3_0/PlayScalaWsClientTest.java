@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package io.opentelemetry.javaagent.instrumentation.playws.v2_1;
+package io.opentelemetry.javaagent.instrumentation.playws.v3_0;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 

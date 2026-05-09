@@ -3,13 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package io.opentelemetry.javaagent.instrumentation.playws.v2_1;
+package io.opentelemetry.javaagent.instrumentation.playws.v3_0;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 import io.opentelemetry.instrumentation.testing.junit.http.HttpClientResult;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.util.Map;
 import org.junit.jupiter.api.AfterAll;
@@ -21,11 +20,12 @@ import play.api.libs.ws.ahc.StandaloneAhcWSClient;
 import scala.Function1;
 import scala.concurrent.Await;
 import scala.concurrent.ExecutionContext;
+import scala.concurrent.Future;
 import scala.concurrent.duration.Duration;
 import scala.jdk.javaapi.CollectionConverters;
 import scala.util.Try;
 
-class PlayScalaWsClientTest extends PlayWsClientBaseTest<StandaloneWSRequest> {
+class PlayScalaStreamedWsClientTest extends PlayWsClientBaseTest<StandaloneWSRequest> {
 
   private static StandaloneWSClient wsClient;
   private static StandaloneWSClient wsClientWithReadTimeout;
@@ -45,19 +45,19 @@ class PlayScalaWsClientTest extends PlayWsClientBaseTest<StandaloneWSRequest> {
 
   @Override
   public StandaloneWSRequest buildRequest(String method, URI uri, Map<String, String> headers)
-      throws MalformedURLException {
+      throws Exception {
     return getClient(uri)
         .url(uri.toURL().toString())
         .withMethod(method)
         .withFollowRedirects(true)
-        .withHttpHeaders(CollectionConverters.asScala(headers).toSeq());
+        .withHttpHeaders(CollectionConverters.asScala(headers).toList());
   }
 
   @Override
   public int sendRequest(
       StandaloneWSRequest request, String method, URI uri, Map<String, String> headers)
       throws Exception {
-    return Await.result(request.execute(), Duration.apply(10, SECONDS)).status();
+    return Await.result(internalSendRequest(request), Duration.apply(10, SECONDS)).status();
   }
 
   @Override
@@ -67,8 +67,7 @@ class PlayScalaWsClientTest extends PlayWsClientBaseTest<StandaloneWSRequest> {
       URI uri,
       Map<String, String> headers,
       HttpClientResult requestResult) {
-    request
-        .execute()
+    internalSendRequest(request)
         .onComplete(
             new Function1<Try<StandaloneWSResponse>, Void>() {
               @Override
@@ -82,6 +81,28 @@ class PlayScalaWsClientTest extends PlayWsClientBaseTest<StandaloneWSRequest> {
               }
             },
             ExecutionContext.global());
+  }
+
+  private static Future<StandaloneWSResponse> internalSendRequest(StandaloneWSRequest request) {
+    Future<StandaloneWSResponse> futureResponse = request.stream();
+    // The status can be ready before the body so explicitly call wait for body to be ready
+    Future<String> bodyResponse =
+        futureResponse.flatMap(
+            new Function1<StandaloneWSResponse, Future<String>>() {
+              @Override
+              public Future<String> apply(StandaloneWSResponse wsResponse) {
+                return wsResponse.bodyAsSource().runFold("", (acc, out) -> "", materializer);
+              }
+            },
+            ExecutionContext.global());
+    return bodyResponse.flatMap(
+        new Function1<String, Future<StandaloneWSResponse>>() {
+          @Override
+          public Future<StandaloneWSResponse> apply(String v1) {
+            return futureResponse;
+          }
+        },
+        ExecutionContext.global());
   }
 
   private static StandaloneWSClient getClient(URI uri) {
