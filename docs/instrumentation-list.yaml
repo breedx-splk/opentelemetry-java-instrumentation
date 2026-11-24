@@ -2663,6 +2663,24 @@ definitions:
         type: STRING
       - name: kafka.cluster.id
         type: STRING
+    kafka.consumer.assigned_partitions-e3b3c651:
+      name: kafka.consumer.assigned_partitions
+      description: The number of partitions currently assigned to this consumer
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
+    kafka.consumer.bytes_consumed_rate-564d969b:
+      name: kafka.consumer.bytes_consumed_rate
+      description: The average number of bytes consumed per second
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
     kafka.consumer.bytes_consumed_rate-677c9140:
       name: kafka.consumer.bytes_consumed_rate
       description: The average number of bytes consumed per second
@@ -2675,6 +2693,15 @@ definitions:
       - name: kafka.cluster.id
         type: STRING
       - name: topic
+        type: STRING
+    kafka.consumer.bytes_consumed_total-0393b24a:
+      name: kafka.consumer.bytes_consumed_total
+      description: The total number of bytes consumed
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
         type: STRING
     kafka.consumer.bytes_consumed_total-12947b8d:
       name: kafka.consumer.bytes_consumed_total
@@ -2722,7 +2749,16 @@ definitions:
         type: STRING
       - name: kafka.cluster.id
         type: STRING
-    kafka.consumer.commit_sync_time_ns_total-efd9677a:
+    kafka.consumer.commit_rate-a4b078ce:
+      name: kafka.consumer.commit_rate
+      description: The number of commit calls per second
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
+    kafka.consumer.commit_sync_time_ns_total-9e1880b8:
       name: kafka.consumer.commit_sync_time_ns_total
       description: The total time the consumer has spent in commitSync in nanoseconds
       instrument: counter
@@ -2731,7 +2767,14 @@ definitions:
       attributes:
       - name: client-id
         type: STRING
-      - name: kafka.cluster.id
+    kafka.consumer.commit_total-24a80858:
+      name: kafka.consumer.commit_total
+      description: The total number of commit calls
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
         type: STRING
     kafka.consumer.commit_total-d8205321:
       name: kafka.consumer.commit_total
@@ -2744,7 +2787,7 @@ definitions:
         type: STRING
       - name: kafka.cluster.id
         type: STRING
-    kafka.consumer.committed_time_ns_total-16877cb3:
+    kafka.consumer.committed_time_ns_total-1ad0caf0:
       name: kafka.consumer.committed_time_ns_total
       description: The total time the consumer has spent in committed in nanoseconds
       instrument: counter
@@ -2753,7 +2796,14 @@ definitions:
       attributes:
       - name: client-id
         type: STRING
-      - name: kafka.cluster.id
+    kafka.consumer.connection_close_rate-43e33f77:
+      name: kafka.consumer.connection_close_rate
+      description: The number of connections closed per second
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
         type: STRING
     kafka.consumer.connection_close_rate-a9c91eeb:
       name: kafka.consumer.connection_close_rate
@@ -2777,6 +2827,24 @@ definitions:
         type: STRING
       - name: kafka.cluster.id
         type: STRING
+    kafka.consumer.connection_close_total-d3225ce7:
+      name: kafka.consumer.connection_close_total
+      description: The total number of connections closed
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
+    kafka.consumer.connection_count-45f83f51:
+      name: kafka.consumer.connection_count
+      description: The current number of active connections.
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
     kafka.consumer.connection_count-b68f044c:
       name: kafka.consumer.connection_count
       description: The current number of active connections.
@@ -2799,6 +2867,24 @@ definitions:
         type: STRING
       - name: kafka.cluster.id
         type: STRING
+    kafka.consumer.connection_creation_rate-c70d12ca:
+      name: kafka.consumer.connection_creation_rate
+      description: The number of new connections established per second
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
+    kafka.consumer.connection_creation_total-43f8f997:
+      name: kafka.consumer.connection_creation_total
+      description: The total number of new connections established
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
     kafka.consumer.connection_creation_total-c0a7bf78:
       name: kafka.consumer.connection_creation_total
       description: The total number of new connections established
@@ -2809,6 +2895,15 @@ definitions:
       - name: client-id
         type: STRING
       - name: kafka.cluster.id
+        type: STRING
+    kafka.consumer.failed_authentication_rate-4fcf4e4f:
+      name: kafka.consumer.failed_authentication_rate
+      description: The number of connections with failed authentication per second
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
         type: STRING
     kafka.consumer.failed_authentication_rate-b6bd2d7a:
       name: kafka.consumer.failed_authentication_rate
@@ -2832,6 +2927,24 @@ definitions:
         type: STRING
       - name: kafka.cluster.id
         type: STRING
+    kafka.consumer.failed_authentication_total-f0126b29:
+      name: kafka.consumer.failed_authentication_total
+      description: The total number of connections with failed authentication
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
+    kafka.consumer.failed_reauthentication_rate-5365793d:
+      name: kafka.consumer.failed_reauthentication_rate
+      description: The number of failed re-authentication of connections per second
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
     kafka.consumer.failed_reauthentication_rate-ed22def6:
       name: kafka.consumer.failed_reauthentication_rate
       description: The number of failed re-authentication of connections per second
@@ -2842,6 +2955,15 @@ definitions:
       - name: client-id
         type: STRING
       - name: kafka.cluster.id
+        type: STRING
+    kafka.consumer.failed_reauthentication_total-16119175:
+      name: kafka.consumer.failed_reauthentication_total
+      description: The total number of failed re-authentication of connections
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
         type: STRING
     kafka.consumer.failed_reauthentication_total-c735df10:
       name: kafka.consumer.failed_reauthentication_total
@@ -2864,6 +2986,24 @@ definitions:
       - name: client-id
         type: STRING
       - name: kafka.cluster.id
+        type: STRING
+    kafka.consumer.failed_rebalance_rate_per_hour-8417e8a7:
+      name: kafka.consumer.failed_rebalance_rate_per_hour
+      description: The number of failed rebalance events per hour
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
+    kafka.consumer.failed_rebalance_total-8bca5b42:
+      name: kafka.consumer.failed_rebalance_total
+      description: The total number of failed rebalance events
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
         type: STRING
     kafka.consumer.failed_rebalance_total-c79a209f:
       name: kafka.consumer.failed_rebalance_total
@@ -2908,6 +3048,15 @@ definitions:
       - name: client-id
         type: STRING
       - name: kafka.cluster.id
+        type: STRING
+    kafka.consumer.fetch_rate-de362f7b:
+      name: kafka.consumer.fetch_rate
+      description: The number of fetch requests per second.
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
         type: STRING
     kafka.consumer.fetch_size_avg-f52d877e:
       name: kafka.consumer.fetch_size_avg
@@ -2957,6 +3106,15 @@ definitions:
         type: STRING
       - name: kafka.cluster.id
         type: STRING
+    kafka.consumer.fetch_total-7db71e3f:
+      name: kafka.consumer.fetch_total
+      description: The total number of fetch requests.
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
     kafka.consumer.fetch_total-9d09818d:
       name: kafka.consumer.fetch_total
       description: The total number of fetch requests.
@@ -2967,6 +3125,15 @@ definitions:
       - name: client-id
         type: STRING
       - name: kafka.cluster.id
+        type: STRING
+    kafka.consumer.heartbeat_rate-12d81990:
+      name: kafka.consumer.heartbeat_rate
+      description: The number of heartbeats per second
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
         type: STRING
     kafka.consumer.heartbeat_rate-8cb2af4e:
       name: kafka.consumer.heartbeat_rate
@@ -2979,16 +3146,14 @@ definitions:
         type: STRING
       - name: kafka.cluster.id
         type: STRING
-    kafka.consumer.heartbeat_response_time_max-15ed35ff:
-      name: kafka.consumer.heartbeat_response_time_max
-      description: The max time taken to receive a response to a heartbeat request
-      instrument: gauge
-      data_type: DOUBLE_GAUGE
+    kafka.consumer.heartbeat_total-5c57e127:
+      name: kafka.consumer.heartbeat_total
+      description: The total number of heartbeats
+      instrument: counter
+      data_type: DOUBLE_SUM
       unit: ''
       attributes:
       - name: client-id
-        type: STRING
-      - name: kafka.cluster.id
         type: STRING
     kafka.consumer.heartbeat_total-ffc8a49f:
       name: kafka.consumer.heartbeat_total
@@ -3000,6 +3165,15 @@ definitions:
       - name: client-id
         type: STRING
       - name: kafka.cluster.id
+        type: STRING
+    kafka.consumer.incoming_byte_rate-52dc7629:
+      name: kafka.consumer.incoming_byte_rate
+      description: The number of bytes read off all sockets per second
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
         type: STRING
     kafka.consumer.incoming_byte_rate-aa366cac:
       name: kafka.consumer.incoming_byte_rate
@@ -3027,6 +3201,15 @@ definitions:
         type: STRING
       - name: node-id
         type: STRING
+    kafka.consumer.incoming_byte_total-65fddfe4:
+      name: kafka.consumer.incoming_byte_total
+      description: The total number of bytes read off all sockets
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
     kafka.consumer.io_ratio-02ca9691:
       name: kafka.consumer.io_ratio
       description: The fraction of time the I/O thread spent doing I/O
@@ -3037,6 +3220,15 @@ definitions:
       - name: client-id
         type: STRING
       - name: kafka.cluster.id
+        type: STRING
+    kafka.consumer.io_ratio-8cc0c241:
+      name: kafka.consumer.io_ratio
+      description: The fraction of time the I/O thread spent doing I/O
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
         type: STRING
     kafka.consumer.io_time_ns_avg-6ae8ce45:
       name: kafka.consumer.io_time_ns_avg
@@ -3049,7 +3241,7 @@ definitions:
         type: STRING
       - name: kafka.cluster.id
         type: STRING
-    kafka.consumer.io_time_ns_total-8ee82127:
+    kafka.consumer.io_time_ns_total-5085f4db:
       name: kafka.consumer.io_time_ns_total
       description: The total time the I/O thread spent doing I/O
       instrument: counter
@@ -3058,7 +3250,14 @@ definitions:
       attributes:
       - name: client-id
         type: STRING
-      - name: kafka.cluster.id
+    kafka.consumer.io_wait_ratio-50616d5b:
+      name: kafka.consumer.io_wait_ratio
+      description: The fraction of time the I/O thread spent waiting
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
         type: STRING
     kafka.consumer.io_wait_ratio-da8005ed:
       name: kafka.consumer.io_wait_ratio
@@ -3083,7 +3282,7 @@ definitions:
         type: STRING
       - name: kafka.cluster.id
         type: STRING
-    kafka.consumer.io_wait_time_ns_total-b75233cc:
+    kafka.consumer.io_wait_time_ns_total-3d555ba7:
       name: kafka.consumer.io_wait_time_ns_total
       description: The total time the I/O thread spent waiting
       instrument: counter
@@ -3091,8 +3290,6 @@ definitions:
       unit: ''
       attributes:
       - name: client-id
-        type: STRING
-      - name: kafka.cluster.id
         type: STRING
     kafka.consumer.io_waittime_total-a453d0e2:
       name: kafka.consumer.io_waittime_total
@@ -3115,6 +3312,15 @@ definitions:
       - name: client-id
         type: STRING
       - name: kafka.cluster.id
+        type: STRING
+    kafka.consumer.join_rate-7b04102f:
+      name: kafka.consumer.join_rate
+      description: The number of group joins per second
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
         type: STRING
     kafka.consumer.join_rate-b5bf5c90:
       name: kafka.consumer.join_rate
@@ -3149,6 +3355,15 @@ definitions:
         type: STRING
       - name: kafka.cluster.id
         type: STRING
+    kafka.consumer.join_total-29388d85:
+      name: kafka.consumer.join_total
+      description: The total number of group joins
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
     kafka.consumer.join_total-37eca8e8:
       name: kafka.consumer.join_total
       description: The total number of group joins
@@ -3172,6 +3387,16 @@ definitions:
         type: STRING
       - name: kafka.cluster.id
         type: STRING
+    kafka.consumer.last_heartbeat_seconds_ago-6abc4330:
+      name: kafka.consumer.last_heartbeat_seconds_ago
+      description: The number of seconds since the last coordinator heartbeat was
+        sent
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
     kafka.consumer.last_poll_seconds_ago-407652c3:
       name: kafka.consumer.last_poll_seconds_ago
       description: The number of seconds since the last poll() invocation.
@@ -3182,6 +3407,24 @@ definitions:
       - name: client-id
         type: STRING
       - name: kafka.cluster.id
+        type: STRING
+    kafka.consumer.last_poll_seconds_ago-979e631a:
+      name: kafka.consumer.last_poll_seconds_ago
+      description: The number of seconds since the last poll() invocation.
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
+    kafka.consumer.last_rebalance_seconds_ago-97474aaa:
+      name: kafka.consumer.last_rebalance_seconds_ago
+      description: The number of seconds since the last successful rebalance event
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
         type: STRING
     kafka.consumer.last_rebalance_seconds_ago-aa8ecde2:
       name: kafka.consumer.last_rebalance_seconds_ago
@@ -3206,6 +3449,26 @@ definitions:
         type: STRING
       - name: kafka.cluster.id
         type: STRING
+    kafka.consumer.network_io_rate-5eda9dd5:
+      name: kafka.consumer.network_io_rate
+      description: The number of network operations (reads or writes) on all connections
+        per second
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
+    kafka.consumer.network_io_total-0518722a:
+      name: kafka.consumer.network_io_total
+      description: The total number of network operations (reads or writes) on all
+        connections
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
     kafka.consumer.network_io_total-81bdf250:
       name: kafka.consumer.network_io_total
       description: The total number of network operations (reads or writes) on all
@@ -3217,6 +3480,15 @@ definitions:
       - name: client-id
         type: STRING
       - name: kafka.cluster.id
+        type: STRING
+    kafka.consumer.outgoing_byte_rate-0975d6cf:
+      name: kafka.consumer.outgoing_byte_rate
+      description: The number of outgoing bytes sent to all servers per second
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
         type: STRING
     kafka.consumer.outgoing_byte_rate-d7c41c4f:
       name: kafka.consumer.outgoing_byte_rate
@@ -3230,6 +3502,15 @@ definitions:
       - name: kafka.cluster.id
         type: STRING
       - name: node-id
+        type: STRING
+    kafka.consumer.outgoing_byte_total-303f52b8:
+      name: kafka.consumer.outgoing_byte_total
+      description: The total number of outgoing bytes sent to all servers
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
         type: STRING
     kafka.consumer.outgoing_byte_total-605ebd43:
       name: kafka.consumer.outgoing_byte_total
@@ -3316,6 +3597,26 @@ definitions:
         type: STRING
       - name: kafka.cluster.id
         type: STRING
+    kafka.consumer.rebalance_latency_total-c2692cd0:
+      name: kafka.consumer.rebalance_latency_total
+      description: The total number of milliseconds this consumer has spent in successful
+        rebalances since creation
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
+    kafka.consumer.rebalance_rate_per_hour-528d47c8:
+      name: kafka.consumer.rebalance_rate_per_hour
+      description: The number of successful rebalance events per hour, each event
+        is composed of several failed re-trials until it succeeded
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
     kafka.consumer.rebalance_rate_per_hour-f5ff97fc:
       name: kafka.consumer.rebalance_rate_per_hour
       description: The number of successful rebalance events per hour, each event
@@ -3328,6 +3629,16 @@ definitions:
         type: STRING
       - name: kafka.cluster.id
         type: STRING
+    kafka.consumer.rebalance_total-4400dbbd:
+      name: kafka.consumer.rebalance_total
+      description: The total number of successful rebalance events, each event is
+        composed of several failed re-trials until it succeeded
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
     kafka.consumer.rebalance_total-500afe22:
       name: kafka.consumer.rebalance_total
       description: The total number of successful rebalance events, each event is
@@ -3339,6 +3650,15 @@ definitions:
       - name: client-id
         type: STRING
       - name: kafka.cluster.id
+        type: STRING
+    kafka.consumer.records_consumed_rate-c22ffeb5:
+      name: kafka.consumer.records_consumed_rate
+      description: The average number of records consumed per second
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
         type: STRING
     kafka.consumer.records_consumed_rate-d9b9d3d8:
       name: kafka.consumer.records_consumed_rate
@@ -3366,45 +3686,18 @@ definitions:
         type: STRING
       - name: topic
         type: STRING
-    kafka.consumer.records_lag-2c8cdab4:
-      name: kafka.consumer.records_lag
-      description: 'The latest lag of the partition. Note: For topic names with periods
-        (.), an additional metric with underscores is emitted. However, the periods
-        replaced metric is deprecated. Please use the metric with actual topic name
-        instead.'
-      instrument: gauge
-      data_type: DOUBLE_GAUGE
+    kafka.consumer.records_consumed_total-b64b6c62:
+      name: kafka.consumer.records_consumed_total
+      description: The total number of records consumed
+      instrument: counter
+      data_type: DOUBLE_SUM
       unit: ''
       attributes:
       - name: client-id
-        type: STRING
-      - name: kafka.cluster.id
-        type: STRING
-      - name: partition
-        type: STRING
-      - name: topic
         type: STRING
     kafka.consumer.records_lag-2eb7971a:
       name: kafka.consumer.records_lag
       description: The latest lag of the partition
-      instrument: gauge
-      data_type: DOUBLE_GAUGE
-      unit: ''
-      attributes:
-      - name: client-id
-        type: STRING
-      - name: kafka.cluster.id
-        type: STRING
-      - name: partition
-        type: STRING
-      - name: topic
-        type: STRING
-    kafka.consumer.records_lag_avg-364be561:
-      name: kafka.consumer.records_lag_avg
-      description: 'The average lag of the partition. Note: For topic names with periods
-        (.), an additional metric with underscores is emitted. However, the periods
-        replaced metric is deprecated. Please use the metric with actual topic name
-        instead.'
       instrument: gauge
       data_type: DOUBLE_GAUGE
       unit: ''
@@ -3448,61 +3741,9 @@ definitions:
         type: STRING
       - name: topic
         type: STRING
-    kafka.consumer.records_lag_max-6f65fad6:
-      name: kafka.consumer.records_lag_max
-      description: 'The maximum lag in terms of number of records for any partition
-        in this window. NOTE: This is based on current offset and not committed offset'
-      instrument: gauge
-      data_type: DOUBLE_GAUGE
-      unit: ''
-      attributes:
-      - name: client-id
-        type: STRING
-      - name: kafka.cluster.id
-        type: STRING
-      - name: partition
-        type: STRING
-      - name: topic
-        type: STRING
-    kafka.consumer.records_lead-1991cb14:
-      name: kafka.consumer.records_lead
-      description: 'The latest lead of the partition. Note: For topic names with periods
-        (.), an additional metric with underscores is emitted. However, the periods
-        replaced metric is deprecated. Please use the metric with actual topic name
-        instead.'
-      instrument: gauge
-      data_type: DOUBLE_GAUGE
-      unit: ''
-      attributes:
-      - name: client-id
-        type: STRING
-      - name: kafka.cluster.id
-        type: STRING
-      - name: partition
-        type: STRING
-      - name: topic
-        type: STRING
     kafka.consumer.records_lead-e96d4e05:
       name: kafka.consumer.records_lead
       description: The latest lead of the partition
-      instrument: gauge
-      data_type: DOUBLE_GAUGE
-      unit: ''
-      attributes:
-      - name: client-id
-        type: STRING
-      - name: kafka.cluster.id
-        type: STRING
-      - name: partition
-        type: STRING
-      - name: topic
-        type: STRING
-    kafka.consumer.records_lead_avg-868a21eb:
-      name: kafka.consumer.records_lead_avg
-      description: 'The average lead of the partition. Note: For topic names with
-        periods (.), an additional metric with underscores is emitted. However, the
-        periods replaced metric is deprecated. Please use the metric with actual topic
-        name instead.'
       instrument: gauge
       data_type: DOUBLE_GAUGE
       unit: ''
@@ -3559,31 +3800,14 @@ definitions:
         type: STRING
       - name: topic
         type: STRING
-    kafka.consumer.request_latency_avg-b493f642:
-      name: kafka.consumer.request_latency_avg
-      description: ''
+    kafka.consumer.request_rate-2c2d8479:
+      name: kafka.consumer.request_rate
+      description: The number of requests sent per second
       instrument: gauge
       data_type: DOUBLE_GAUGE
       unit: ''
       attributes:
       - name: client-id
-        type: STRING
-      - name: kafka.cluster.id
-        type: STRING
-      - name: node-id
-        type: STRING
-    kafka.consumer.request_latency_max-88210cdf:
-      name: kafka.consumer.request_latency_max
-      description: ''
-      instrument: gauge
-      data_type: DOUBLE_GAUGE
-      unit: ''
-      attributes:
-      - name: client-id
-        type: STRING
-      - name: kafka.cluster.id
-        type: STRING
-      - name: node-id
         type: STRING
     kafka.consumer.request_rate-fd916ad7:
       name: kafka.consumer.request_rate
@@ -3624,6 +3848,15 @@ definitions:
         type: STRING
       - name: node-id
         type: STRING
+    kafka.consumer.request_total-423ebdeb:
+      name: kafka.consumer.request_total
+      description: The total number of requests sent
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
     kafka.consumer.request_total-9732164f:
       name: kafka.consumer.request_total
       description: The total number of requests sent
@@ -3650,6 +3883,15 @@ definitions:
         type: STRING
       - name: node-id
         type: STRING
+    kafka.consumer.response_rate-ecbf1487:
+      name: kafka.consumer.response_rate
+      description: The number of responses received per second
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
     kafka.consumer.response_total-bf9c900b:
       name: kafka.consumer.response_total
       description: The total number of responses received
@@ -3663,6 +3905,15 @@ definitions:
         type: STRING
       - name: node-id
         type: STRING
+    kafka.consumer.response_total-cad6be25:
+      name: kafka.consumer.response_total
+      description: The total number of responses received
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
     kafka.consumer.select_rate-45db861b:
       name: kafka.consumer.select_rate
       description: The number of times the I/O layer checked for new I/O to perform
@@ -3675,6 +3926,26 @@ definitions:
         type: STRING
       - name: kafka.cluster.id
         type: STRING
+    kafka.consumer.select_rate-5492f932:
+      name: kafka.consumer.select_rate
+      description: The number of times the I/O layer checked for new I/O to perform
+        per second
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
+    kafka.consumer.select_total-20be5806:
+      name: kafka.consumer.select_total
+      description: The total number of times the I/O layer checked for new I/O to
+        perform
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
     kafka.consumer.select_total-ab48483e:
       name: kafka.consumer.select_total
       description: The total number of times the I/O layer checked for new I/O to
@@ -3686,6 +3957,16 @@ definitions:
       - name: client-id
         type: STRING
       - name: kafka.cluster.id
+        type: STRING
+    kafka.consumer.successful_authentication_no_reauth_total-889db2f2:
+      name: kafka.consumer.successful_authentication_no_reauth_total
+      description: The total number of connections with successful authentication
+        where the client does not support re-authentication
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
         type: STRING
     kafka.consumer.successful_authentication_no_reauth_total-ffdbd504:
       name: kafka.consumer.successful_authentication_no_reauth_total
@@ -3710,6 +3991,24 @@ definitions:
         type: STRING
       - name: kafka.cluster.id
         type: STRING
+    kafka.consumer.successful_authentication_rate-9fd22b63:
+      name: kafka.consumer.successful_authentication_rate
+      description: The number of connections with successful authentication per second
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
+    kafka.consumer.successful_authentication_total-055dadf5:
+      name: kafka.consumer.successful_authentication_total
+      description: The total number of connections with successful authentication
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
     kafka.consumer.successful_authentication_total-f9d49eea:
       name: kafka.consumer.successful_authentication_total
       description: The total number of connections with successful authentication
@@ -3720,6 +4019,15 @@ definitions:
       - name: client-id
         type: STRING
       - name: kafka.cluster.id
+        type: STRING
+    kafka.consumer.successful_reauthentication_rate-459b149f:
+      name: kafka.consumer.successful_reauthentication_rate
+      description: The number of successful re-authentication of connections per second
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
         type: STRING
     kafka.consumer.successful_reauthentication_rate-ce402806:
       name: kafka.consumer.successful_reauthentication_rate
@@ -3732,6 +4040,15 @@ definitions:
         type: STRING
       - name: kafka.cluster.id
         type: STRING
+    kafka.consumer.successful_reauthentication_total-50fad86f:
+      name: kafka.consumer.successful_reauthentication_total
+      description: The total number of successful re-authentication of connections
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
     kafka.consumer.successful_reauthentication_total-e9fbfcc9:
       name: kafka.consumer.successful_reauthentication_total
       description: The total number of successful re-authentication of connections
@@ -3742,6 +4059,15 @@ definitions:
       - name: client-id
         type: STRING
       - name: kafka.cluster.id
+        type: STRING
+    kafka.consumer.sync_rate-403f4044:
+      name: kafka.consumer.sync_rate
+      description: The number of group syncs per second
+      instrument: gauge
+      data_type: DOUBLE_GAUGE
+      unit: ''
+      attributes:
+      - name: client-id
         type: STRING
     kafka.consumer.sync_rate-7e5afa4f:
       name: kafka.consumer.sync_rate
@@ -3787,6 +4113,15 @@ definitions:
         type: STRING
       - name: kafka.cluster.id
         type: STRING
+    kafka.consumer.sync_total-59c8eda7:
+      name: kafka.consumer.sync_total
+      description: The total number of group syncs
+      instrument: counter
+      data_type: DOUBLE_SUM
+      unit: ''
+      attributes:
+      - name: client-id
+        type: STRING
     kafka.consumer.time_between_poll_avg-7c1f448a:
       name: kafka.consumer.time_between_poll_avg
       description: The average delay between invocations of poll().
@@ -3798,31 +4133,9 @@ definitions:
         type: STRING
       - name: kafka.cluster.id
         type: STRING
-    kafka.consumer.time_between_poll_avg-bf475425:
-      name: kafka.consumer.time_between_poll_avg
-      description: The average delay between invocations of poll() in milliseconds.
-      instrument: gauge
-      data_type: DOUBLE_GAUGE
-      unit: ''
-      attributes:
-      - name: client-id
-        type: STRING
-      - name: kafka.cluster.id
-        type: STRING
     kafka.consumer.time_between_poll_max-9ddc422a:
       name: kafka.consumer.time_between_poll_max
       description: The max delay between invocations of poll().
-      instrument: gauge
-      data_type: DOUBLE_GAUGE
-      unit: ''
-      attributes:
-      - name: client-id
-        type: STRING
-      - name: kafka.cluster.id
-        type: STRING
-    kafka.consumer.time_between_poll_max-ff33c9d0:
-      name: kafka.consumer.time_between_poll_max
-      description: The max delay between invocations of poll() in milliseconds.
       instrument: gauge
       data_type: DOUBLE_GAUGE
       unit: ''
@@ -4967,6 +5280,26 @@ definitions:
         type: STRING
       - name: messaging.system.name
         type: STRING
+    messaging.client.operation.duration-17a258bf:
+      name: messaging.client.operation.duration
+      description: Duration of messaging operation initiated by a producer or consumer
+        client.
+      instrument: histogram
+      data_type: HISTOGRAM
+      unit: s
+      attributes:
+      - name: error.type
+        type: STRING
+      - name: messaging.consumer.group.name
+        type: STRING
+      - name: messaging.destination.name
+        type: STRING
+      - name: messaging.operation.name
+        type: STRING
+      - name: messaging.operation.type
+        type: STRING
+      - name: messaging.system.name
+        type: STRING
     messaging.client.operation.duration-215161fc:
       name: messaging.client.operation.duration
       description: Duration of messaging operation initiated by a producer or consumer
@@ -5021,24 +5354,6 @@ definitions:
         type: STRING
       - name: server.port
         type: LONG
-    messaging.client.operation.duration-b7b278fe:
-      name: messaging.client.operation.duration
-      description: Duration of messaging operation initiated by a producer or consumer
-        client.
-      instrument: histogram
-      data_type: HISTOGRAM
-      unit: s
-      attributes:
-      - name: messaging.consumer.group.name
-        type: STRING
-      - name: messaging.destination.name
-        type: STRING
-      - name: messaging.operation.name
-        type: STRING
-      - name: messaging.operation.type
-        type: STRING
-      - name: messaging.system.name
-        type: STRING
     messaging.client.operation.duration-c10d75e0:
       name: messaging.client.operation.duration
       description: Duration of messaging operation initiated by a producer or consumer
@@ -12143,168 +12458,6 @@ libraries:
   telemetry:
   - when: default
     metric_refs:
-    - kafka.consumer.assigned_partitions-5f2d0714
-    - kafka.consumer.bytes_consumed_rate-677c9140
-    - kafka.consumer.bytes_consumed_total-12947b8d
-    - kafka.consumer.commit_latency_avg-010ecf40
-    - kafka.consumer.commit_latency_max-fc6a2be6
-    - kafka.consumer.commit_rate-0c3aae4b
-    - kafka.consumer.commit_sync_time_ns_total-efd9677a
-    - kafka.consumer.commit_total-d8205321
-    - kafka.consumer.committed_time_ns_total-16877cb3
-    - kafka.consumer.connection_close_rate-a9c91eeb
-    - kafka.consumer.connection_close_total-a7897234
-    - kafka.consumer.connection_count-b68f044c
-    - kafka.consumer.connection_creation_rate-ad21bcd0
-    - kafka.consumer.connection_creation_total-c0a7bf78
-    - kafka.consumer.failed_authentication_rate-b6bd2d7a
-    - kafka.consumer.failed_authentication_total-c7d24404
-    - kafka.consumer.failed_reauthentication_rate-ed22def6
-    - kafka.consumer.failed_reauthentication_total-c735df10
-    - kafka.consumer.failed_rebalance_rate_per_hour-723e8b66
-    - kafka.consumer.failed_rebalance_total-c79a209f
-    - kafka.consumer.fetch_latency_avg-c32ee3a8
-    - kafka.consumer.fetch_latency_max-d9c78b75
-    - kafka.consumer.fetch_rate-b9250308
-    - kafka.consumer.fetch_size_avg-f52d877e
-    - kafka.consumer.fetch_size_max-5abcc685
-    - kafka.consumer.fetch_throttle_time_avg-11f87396
-    - kafka.consumer.fetch_throttle_time_max-a716c191
-    - kafka.consumer.fetch_total-9d09818d
-    - kafka.consumer.heartbeat_rate-8cb2af4e
-    - kafka.consumer.heartbeat_response_time_max-15ed35ff
-    - kafka.consumer.heartbeat_total-ffc8a49f
-    - kafka.consumer.incoming_byte_rate-aa366cac
-    - kafka.consumer.incoming_byte_total-40c552cf
-    - kafka.consumer.io_ratio-02ca9691
-    - kafka.consumer.io_time_ns_avg-6ae8ce45
-    - kafka.consumer.io_time_ns_total-8ee82127
-    - kafka.consumer.io_wait_ratio-da8005ed
-    - kafka.consumer.io_wait_time_ns_avg-204c0fdc
-    - kafka.consumer.io_wait_time_ns_total-b75233cc
-    - kafka.consumer.join_rate-b5bf5c90
-    - kafka.consumer.join_time_avg-18db16c8
-    - kafka.consumer.join_time_max-cda17a1e
-    - kafka.consumer.join_total-37eca8e8
-    - kafka.consumer.last_heartbeat_seconds_ago-00d45f42
-    - kafka.consumer.last_poll_seconds_ago-407652c3
-    - kafka.consumer.last_rebalance_seconds_ago-aa8ecde2
-    - kafka.consumer.network_io_rate-3735fe1b
-    - kafka.consumer.network_io_total-81bdf250
-    - kafka.consumer.outgoing_byte_rate-d7c41c4f
-    - kafka.consumer.outgoing_byte_total-605ebd43
-    - kafka.consumer.partition_assigned_latency_avg-3ef9d4e1
-    - kafka.consumer.partition_assigned_latency_max-3c854413
-    - kafka.consumer.poll_idle_ratio_avg-67d771aa
-    - kafka.consumer.rebalance_latency_avg-c86d0e89
-    - kafka.consumer.rebalance_latency_max-4525c300
-    - kafka.consumer.rebalance_latency_total-55d2b07f
-    - kafka.consumer.rebalance_rate_per_hour-f5ff97fc
-    - kafka.consumer.rebalance_total-500afe22
-    - kafka.consumer.records_consumed_rate-d9b9d3d8
-    - kafka.consumer.records_consumed_total-22bc6ebc
-    - kafka.consumer.records_lag-2c8cdab4
-    - kafka.consumer.records_lag_avg-364be561
-    - kafka.consumer.records_lag_max-6f65fad6
-    - kafka.consumer.records_lead-1991cb14
-    - kafka.consumer.records_lead_avg-868a21eb
-    - kafka.consumer.records_lead_min-4e65ea74
-    - kafka.consumer.records_per_request_avg-f0d9f606
-    - kafka.consumer.request_latency_avg-b493f642
-    - kafka.consumer.request_latency_max-88210cdf
-    - kafka.consumer.request_rate-fd916ad7
-    - kafka.consumer.request_size_avg-0ffeb751
-    - kafka.consumer.request_size_max-f09b423b
-    - kafka.consumer.request_total-9732164f
-    - kafka.consumer.response_rate-495ac992
-    - kafka.consumer.response_total-bf9c900b
-    - kafka.consumer.select_rate-45db861b
-    - kafka.consumer.select_total-ab48483e
-    - kafka.consumer.successful_authentication_no_reauth_total-ffdbd504
-    - kafka.consumer.successful_authentication_rate-2cb3879c
-    - kafka.consumer.successful_authentication_total-f9d49eea
-    - kafka.consumer.successful_reauthentication_rate-ce402806
-    - kafka.consumer.successful_reauthentication_total-e9fbfcc9
-    - kafka.consumer.sync_rate-7e5afa4f
-    - kafka.consumer.sync_time_avg-11c52f55
-    - kafka.consumer.sync_time_max-60a6556a
-    - kafka.consumer.sync_total-0a15fb45
-    - kafka.consumer.time_between_poll_avg-bf475425
-    - kafka.consumer.time_between_poll_max-ff33c9d0
-    - kafka.producer.batch_size_avg-ca4755da
-    - kafka.producer.batch_size_max-7547e8de
-    - kafka.producer.batch_split_rate-bf8c23ec
-    - kafka.producer.batch_split_total-c71d8309
-    - kafka.producer.buffer_available_bytes-22d2cdf9
-    - kafka.producer.buffer_exhausted_rate-1d3fa684
-    - kafka.producer.buffer_exhausted_total-0d4824da
-    - kafka.producer.buffer_total_bytes-11fe6040
-    - kafka.producer.bufferpool_wait_ratio-9471500a
-    - kafka.producer.bufferpool_wait_time_ns_total-78ba3e8a
-    - kafka.producer.byte_rate-53fd5932
-    - kafka.producer.byte_total-5a12fda2
-    - kafka.producer.compression_rate-7e6afd9e
-    - kafka.producer.compression_rate_avg-2297fa34
-    - kafka.producer.connection_close_rate-c9c42487
-    - kafka.producer.connection_close_total-a0c23236
-    - kafka.producer.connection_count-0304143e
-    - kafka.producer.connection_creation_rate-d519c944
-    - kafka.producer.connection_creation_total-a48782e0
-    - kafka.producer.failed_authentication_rate-cfe9f736
-    - kafka.producer.failed_authentication_total-777d77e5
-    - kafka.producer.failed_reauthentication_rate-2a955487
-    - kafka.producer.failed_reauthentication_total-fe1a293a
-    - kafka.producer.flush_time_ns_total-47bd28c0
-    - kafka.producer.incoming_byte_rate-6b69f184
-    - kafka.producer.incoming_byte_total-bbf8921a
-    - kafka.producer.io_ratio-47f14080
-    - kafka.producer.io_time_ns_avg-5a47799e
-    - kafka.producer.io_time_ns_total-6893583a
-    - kafka.producer.io_wait_ratio-8b1262cb
-    - kafka.producer.io_wait_time_ns_avg-a7b4985b
-    - kafka.producer.io_wait_time_ns_total-d429fb29
-    - kafka.producer.metadata_age-ae019935
-    - kafka.producer.metadata_wait_time_ns_total-f5e7d211
-    - kafka.producer.network_io_rate-3b16cccb
-    - kafka.producer.network_io_total-59350ce8
-    - kafka.producer.outgoing_byte_rate-46144d24
-    - kafka.producer.outgoing_byte_total-20322fc5
-    - kafka.producer.produce_throttle_time_avg-977e45b3
-    - kafka.producer.produce_throttle_time_max-ccb20481
-    - kafka.producer.record_error_rate-d0772386
-    - kafka.producer.record_error_total-869fbc1b
-    - kafka.producer.record_queue_time_avg-05ee7c0f
-    - kafka.producer.record_queue_time_max-6544411e
-    - kafka.producer.record_retry_rate-a6668272
-    - kafka.producer.record_retry_total-41e21b5f
-    - kafka.producer.record_send_rate-550b2414
-    - kafka.producer.record_send_total-a145b861
-    - kafka.producer.record_size_avg-ccd5c8bf
-    - kafka.producer.record_size_max-5deb746f
-    - kafka.producer.records_per_request_avg-1fc965cd
-    - kafka.producer.request_latency_avg-0096430b
-    - kafka.producer.request_latency_max-efff28b0
-    - kafka.producer.request_rate-919077dd
-    - kafka.producer.request_size_avg-7648b6ea
-    - kafka.producer.request_size_max-e206b952
-    - kafka.producer.request_total-ec94813a
-    - kafka.producer.requests_in_flight-bfabefab
-    - kafka.producer.response_rate-fd0c5f38
-    - kafka.producer.response_total-bf9bb3a2
-    - kafka.producer.select_rate-a41644d4
-    - kafka.producer.select_total-48a9e108
-    - kafka.producer.successful_authentication_no_reauth_total-901b48ec
-    - kafka.producer.successful_authentication_rate-f5f7041c
-    - kafka.producer.successful_authentication_total-b9c5f13a
-    - kafka.producer.successful_reauthentication_rate-7d372fac
-    - kafka.producer.successful_reauthentication_total-5ac1e446
-    - kafka.producer.txn_abort_time_ns_total-e78813d3
-    - kafka.producer.txn_begin_time_ns_total-c5840e3b
-    - kafka.producer.txn_commit_time_ns_total-20044d9f
-    - kafka.producer.txn_init_time_ns_total-2e7b36eb
-    - kafka.producer.txn_prepare_time_ns_total-af2ea89b
-    - kafka.producer.txn_send_offsets_time_ns_total-4e40f91a
-    - kafka.producer.waiting_threads-804fb397
     - messaging.client.consumed.messages-ddd13d28
     - messaging.client.operation.duration-3a29924c
     - messaging.client.sent.messages-4c9e4d57
@@ -12358,168 +12511,6 @@ libraries:
         type: STRING
   - when: otel.instrumentation.common.messaging.experimental.receive-telemetry.enabled=true
     metric_refs:
-    - kafka.consumer.assigned_partitions-5f2d0714
-    - kafka.consumer.bytes_consumed_rate-677c9140
-    - kafka.consumer.bytes_consumed_total-12947b8d
-    - kafka.consumer.commit_latency_avg-010ecf40
-    - kafka.consumer.commit_latency_max-fc6a2be6
-    - kafka.consumer.commit_rate-0c3aae4b
-    - kafka.consumer.commit_sync_time_ns_total-efd9677a
-    - kafka.consumer.commit_total-d8205321
-    - kafka.consumer.committed_time_ns_total-16877cb3
-    - kafka.consumer.connection_close_rate-a9c91eeb
-    - kafka.consumer.connection_close_total-a7897234
-    - kafka.consumer.connection_count-b68f044c
-    - kafka.consumer.connection_creation_rate-ad21bcd0
-    - kafka.consumer.connection_creation_total-c0a7bf78
-    - kafka.consumer.failed_authentication_rate-b6bd2d7a
-    - kafka.consumer.failed_authentication_total-c7d24404
-    - kafka.consumer.failed_reauthentication_rate-ed22def6
-    - kafka.consumer.failed_reauthentication_total-c735df10
-    - kafka.consumer.failed_rebalance_rate_per_hour-723e8b66
-    - kafka.consumer.failed_rebalance_total-c79a209f
-    - kafka.consumer.fetch_latency_avg-c32ee3a8
-    - kafka.consumer.fetch_latency_max-d9c78b75
-    - kafka.consumer.fetch_rate-b9250308
-    - kafka.consumer.fetch_size_avg-f52d877e
-    - kafka.consumer.fetch_size_max-5abcc685
-    - kafka.consumer.fetch_throttle_time_avg-11f87396
-    - kafka.consumer.fetch_throttle_time_max-a716c191
-    - kafka.consumer.fetch_total-9d09818d
-    - kafka.consumer.heartbeat_rate-8cb2af4e
-    - kafka.consumer.heartbeat_response_time_max-15ed35ff
-    - kafka.consumer.heartbeat_total-ffc8a49f
-    - kafka.consumer.incoming_byte_rate-aa366cac
-    - kafka.consumer.incoming_byte_total-40c552cf
-    - kafka.consumer.io_ratio-02ca9691
-    - kafka.consumer.io_time_ns_avg-6ae8ce45
-    - kafka.consumer.io_time_ns_total-8ee82127
-    - kafka.consumer.io_wait_ratio-da8005ed
-    - kafka.consumer.io_wait_time_ns_avg-204c0fdc
-    - kafka.consumer.io_wait_time_ns_total-b75233cc
-    - kafka.consumer.join_rate-b5bf5c90
-    - kafka.consumer.join_time_avg-18db16c8
-    - kafka.consumer.join_time_max-cda17a1e
-    - kafka.consumer.join_total-37eca8e8
-    - kafka.consumer.last_heartbeat_seconds_ago-00d45f42
-    - kafka.consumer.last_poll_seconds_ago-407652c3
-    - kafka.consumer.last_rebalance_seconds_ago-aa8ecde2
-    - kafka.consumer.network_io_rate-3735fe1b
-    - kafka.consumer.network_io_total-81bdf250
-    - kafka.consumer.outgoing_byte_rate-d7c41c4f
-    - kafka.consumer.outgoing_byte_total-605ebd43
-    - kafka.consumer.partition_assigned_latency_avg-3ef9d4e1
-    - kafka.consumer.partition_assigned_latency_max-3c854413
-    - kafka.consumer.poll_idle_ratio_avg-67d771aa
-    - kafka.consumer.rebalance_latency_avg-c86d0e89
-    - kafka.consumer.rebalance_latency_max-4525c300
-    - kafka.consumer.rebalance_latency_total-55d2b07f
-    - kafka.consumer.rebalance_rate_per_hour-f5ff97fc
-    - kafka.consumer.rebalance_total-500afe22
-    - kafka.consumer.records_consumed_rate-d9b9d3d8
-    - kafka.consumer.records_consumed_total-22bc6ebc
-    - kafka.consumer.records_lag-2c8cdab4
-    - kafka.consumer.records_lag_avg-364be561
-    - kafka.consumer.records_lag_max-6f65fad6
-    - kafka.consumer.records_lead-1991cb14
-    - kafka.consumer.records_lead_avg-868a21eb
-    - kafka.consumer.records_lead_min-4e65ea74
-    - kafka.consumer.records_per_request_avg-f0d9f606
-    - kafka.consumer.request_latency_avg-b493f642
-    - kafka.consumer.request_latency_max-88210cdf
-    - kafka.consumer.request_rate-fd916ad7
-    - kafka.consumer.request_size_avg-0ffeb751
-    - kafka.consumer.request_size_max-f09b423b
-    - kafka.consumer.request_total-9732164f
-    - kafka.consumer.response_rate-495ac992
-    - kafka.consumer.response_total-bf9c900b
-    - kafka.consumer.select_rate-45db861b
-    - kafka.consumer.select_total-ab48483e
-    - kafka.consumer.successful_authentication_no_reauth_total-ffdbd504
-    - kafka.consumer.successful_authentication_rate-2cb3879c
-    - kafka.consumer.successful_authentication_total-f9d49eea
-    - kafka.consumer.successful_reauthentication_rate-ce402806
-    - kafka.consumer.successful_reauthentication_total-e9fbfcc9
-    - kafka.consumer.sync_rate-7e5afa4f
-    - kafka.consumer.sync_time_avg-11c52f55
-    - kafka.consumer.sync_time_max-60a6556a
-    - kafka.consumer.sync_total-0a15fb45
-    - kafka.consumer.time_between_poll_avg-bf475425
-    - kafka.consumer.time_between_poll_max-ff33c9d0
-    - kafka.producer.batch_size_avg-ca4755da
-    - kafka.producer.batch_size_max-7547e8de
-    - kafka.producer.batch_split_rate-bf8c23ec
-    - kafka.producer.batch_split_total-c71d8309
-    - kafka.producer.buffer_available_bytes-22d2cdf9
-    - kafka.producer.buffer_exhausted_rate-1d3fa684
-    - kafka.producer.buffer_exhausted_total-0d4824da
-    - kafka.producer.buffer_total_bytes-11fe6040
-    - kafka.producer.bufferpool_wait_ratio-9471500a
-    - kafka.producer.bufferpool_wait_time_ns_total-78ba3e8a
-    - kafka.producer.byte_rate-53fd5932
-    - kafka.producer.byte_total-5a12fda2
-    - kafka.producer.compression_rate-7e6afd9e
-    - kafka.producer.compression_rate_avg-2297fa34
-    - kafka.producer.connection_close_rate-c9c42487
-    - kafka.producer.connection_close_total-a0c23236
-    - kafka.producer.connection_count-0304143e
-    - kafka.producer.connection_creation_rate-d519c944
-    - kafka.producer.connection_creation_total-a48782e0
-    - kafka.producer.failed_authentication_rate-cfe9f736
-    - kafka.producer.failed_authentication_total-777d77e5
-    - kafka.producer.failed_reauthentication_rate-2a955487
-    - kafka.producer.failed_reauthentication_total-fe1a293a
-    - kafka.producer.flush_time_ns_total-47bd28c0
-    - kafka.producer.incoming_byte_rate-6b69f184
-    - kafka.producer.incoming_byte_total-bbf8921a
-    - kafka.producer.io_ratio-47f14080
-    - kafka.producer.io_time_ns_avg-5a47799e
-    - kafka.producer.io_time_ns_total-6893583a
-    - kafka.producer.io_wait_ratio-8b1262cb
-    - kafka.producer.io_wait_time_ns_avg-a7b4985b
-    - kafka.producer.io_wait_time_ns_total-d429fb29
-    - kafka.producer.metadata_age-ae019935
-    - kafka.producer.metadata_wait_time_ns_total-f5e7d211
-    - kafka.producer.network_io_rate-3b16cccb
-    - kafka.producer.network_io_total-59350ce8
-    - kafka.producer.outgoing_byte_rate-46144d24
-    - kafka.producer.outgoing_byte_total-20322fc5
-    - kafka.producer.produce_throttle_time_avg-977e45b3
-    - kafka.producer.produce_throttle_time_max-ccb20481
-    - kafka.producer.record_error_rate-d0772386
-    - kafka.producer.record_error_total-869fbc1b
-    - kafka.producer.record_queue_time_avg-05ee7c0f
-    - kafka.producer.record_queue_time_max-6544411e
-    - kafka.producer.record_retry_rate-a6668272
-    - kafka.producer.record_retry_total-41e21b5f
-    - kafka.producer.record_send_rate-550b2414
-    - kafka.producer.record_send_total-a145b861
-    - kafka.producer.record_size_avg-ccd5c8bf
-    - kafka.producer.record_size_max-5deb746f
-    - kafka.producer.records_per_request_avg-1fc965cd
-    - kafka.producer.request_latency_avg-0096430b
-    - kafka.producer.request_latency_max-efff28b0
-    - kafka.producer.request_rate-919077dd
-    - kafka.producer.request_size_avg-7648b6ea
-    - kafka.producer.request_size_max-e206b952
-    - kafka.producer.request_total-ec94813a
-    - kafka.producer.requests_in_flight-bfabefab
-    - kafka.producer.response_rate-fd0c5f38
-    - kafka.producer.response_total-bf9bb3a2
-    - kafka.producer.select_rate-a41644d4
-    - kafka.producer.select_total-48a9e108
-    - kafka.producer.successful_authentication_no_reauth_total-901b48ec
-    - kafka.producer.successful_authentication_rate-f5f7041c
-    - kafka.producer.successful_authentication_total-b9c5f13a
-    - kafka.producer.successful_reauthentication_rate-7d372fac
-    - kafka.producer.successful_reauthentication_total-5ac1e446
-    - kafka.producer.txn_abort_time_ns_total-e78813d3
-    - kafka.producer.txn_begin_time_ns_total-c5840e3b
-    - kafka.producer.txn_commit_time_ns_total-20044d9f
-    - kafka.producer.txn_init_time_ns_total-2e7b36eb
-    - kafka.producer.txn_prepare_time_ns_total-af2ea89b
-    - kafka.producer.txn_send_offsets_time_ns_total-4e40f91a
-    - kafka.producer.waiting_threads-804fb397
     - messaging.client.consumed.messages-ddd13d28
     - messaging.client.operation.duration-0ab6c2ce
     - messaging.client.sent.messages-4c9e4d57
@@ -12593,94 +12584,138 @@ libraries:
         type: STRING
   - when: otel.instrumentation.common.messaging.experimental.receive-telemetry.enabled=true,otel.instrumentation.kafka.experimental-span-attributes=true
     metric_refs:
-    - kafka.consumer.assigned_partitions-5f2d0714
-    - kafka.consumer.bytes_consumed_rate-677c9140
-    - kafka.consumer.bytes_consumed_total-12947b8d
-    - kafka.consumer.commit_latency_avg-010ecf40
-    - kafka.consumer.commit_latency_max-fc6a2be6
-    - kafka.consumer.commit_rate-0c3aae4b
-    - kafka.consumer.commit_sync_time_ns_total-efd9677a
-    - kafka.consumer.commit_total-d8205321
-    - kafka.consumer.committed_time_ns_total-16877cb3
-    - kafka.consumer.connection_close_rate-a9c91eeb
-    - kafka.consumer.connection_close_total-a7897234
-    - kafka.consumer.connection_count-b68f044c
-    - kafka.consumer.connection_creation_rate-ad21bcd0
-    - kafka.consumer.connection_creation_total-c0a7bf78
-    - kafka.consumer.failed_authentication_rate-b6bd2d7a
-    - kafka.consumer.failed_authentication_total-c7d24404
-    - kafka.consumer.failed_reauthentication_rate-ed22def6
-    - kafka.consumer.failed_reauthentication_total-c735df10
-    - kafka.consumer.failed_rebalance_rate_per_hour-723e8b66
-    - kafka.consumer.failed_rebalance_total-c79a209f
-    - kafka.consumer.fetch_latency_avg-c32ee3a8
-    - kafka.consumer.fetch_latency_max-d9c78b75
-    - kafka.consumer.fetch_rate-b9250308
-    - kafka.consumer.fetch_size_avg-f52d877e
-    - kafka.consumer.fetch_size_max-5abcc685
-    - kafka.consumer.fetch_throttle_time_avg-11f87396
-    - kafka.consumer.fetch_throttle_time_max-a716c191
-    - kafka.consumer.fetch_total-9d09818d
-    - kafka.consumer.heartbeat_rate-8cb2af4e
-    - kafka.consumer.heartbeat_response_time_max-15ed35ff
-    - kafka.consumer.heartbeat_total-ffc8a49f
-    - kafka.consumer.incoming_byte_rate-aa366cac
-    - kafka.consumer.incoming_byte_total-40c552cf
-    - kafka.consumer.io_ratio-02ca9691
-    - kafka.consumer.io_time_ns_avg-6ae8ce45
-    - kafka.consumer.io_time_ns_total-8ee82127
-    - kafka.consumer.io_wait_ratio-da8005ed
-    - kafka.consumer.io_wait_time_ns_avg-204c0fdc
-    - kafka.consumer.io_wait_time_ns_total-b75233cc
-    - kafka.consumer.join_rate-b5bf5c90
-    - kafka.consumer.join_time_avg-18db16c8
-    - kafka.consumer.join_time_max-cda17a1e
-    - kafka.consumer.join_total-37eca8e8
-    - kafka.consumer.last_heartbeat_seconds_ago-00d45f42
-    - kafka.consumer.last_poll_seconds_ago-407652c3
-    - kafka.consumer.last_rebalance_seconds_ago-aa8ecde2
-    - kafka.consumer.network_io_rate-3735fe1b
-    - kafka.consumer.network_io_total-81bdf250
-    - kafka.consumer.outgoing_byte_rate-d7c41c4f
-    - kafka.consumer.outgoing_byte_total-605ebd43
-    - kafka.consumer.partition_assigned_latency_avg-3ef9d4e1
-    - kafka.consumer.partition_assigned_latency_max-3c854413
-    - kafka.consumer.poll_idle_ratio_avg-67d771aa
-    - kafka.consumer.rebalance_latency_avg-c86d0e89
-    - kafka.consumer.rebalance_latency_max-4525c300
-    - kafka.consumer.rebalance_latency_total-55d2b07f
-    - kafka.consumer.rebalance_rate_per_hour-f5ff97fc
-    - kafka.consumer.rebalance_total-500afe22
-    - kafka.consumer.records_consumed_rate-d9b9d3d8
-    - kafka.consumer.records_consumed_total-22bc6ebc
-    - kafka.consumer.records_lag-2c8cdab4
-    - kafka.consumer.records_lag_avg-364be561
-    - kafka.consumer.records_lag_max-6f65fad6
-    - kafka.consumer.records_lead-1991cb14
-    - kafka.consumer.records_lead_avg-868a21eb
-    - kafka.consumer.records_lead_min-4e65ea74
-    - kafka.consumer.records_per_request_avg-f0d9f606
-    - kafka.consumer.request_latency_avg-b493f642
-    - kafka.consumer.request_latency_max-88210cdf
-    - kafka.consumer.request_rate-fd916ad7
-    - kafka.consumer.request_size_avg-0ffeb751
-    - kafka.consumer.request_size_max-f09b423b
-    - kafka.consumer.request_total-9732164f
-    - kafka.consumer.response_rate-495ac992
-    - kafka.consumer.response_total-bf9c900b
-    - kafka.consumer.select_rate-45db861b
-    - kafka.consumer.select_total-ab48483e
-    - kafka.consumer.successful_authentication_no_reauth_total-ffdbd504
-    - kafka.consumer.successful_authentication_rate-2cb3879c
-    - kafka.consumer.successful_authentication_total-f9d49eea
-    - kafka.consumer.successful_reauthentication_rate-ce402806
-    - kafka.consumer.successful_reauthentication_total-e9fbfcc9
-    - kafka.consumer.sync_rate-7e5afa4f
-    - kafka.consumer.sync_time_avg-11c52f55
-    - kafka.consumer.sync_time_max-60a6556a
-    - kafka.consumer.sync_total-0a15fb45
-    - kafka.consumer.time_between_poll_avg-bf475425
-    - kafka.consumer.time_between_poll_max-ff33c9d0
+    - messaging.client.consumed.messages-ddd13d28
+    - messaging.client.operation.duration-0ab6c2ce
+    - messaging.client.sent.messages-4c9e4d57
+    - messaging.process.duration-2c6cf87e
+    spans:
+    - span_kind: CLIENT
+      attributes:
+      - name: kafka.cluster.id
+        type: STRING
+      - name: messaging.batch.message_count
+        type: LONG
+      - name: messaging.client.id
+        type: STRING
+      - name: messaging.consumer.group.name
+        type: STRING
+      - name: messaging.destination.name
+        type: STRING
+      - name: messaging.destination.partition.id
+        type: STRING
+      - name: messaging.operation.name
+        type: STRING
+      - name: messaging.operation.type
+        type: STRING
+      - name: messaging.system.name
+        type: STRING
+    - span_kind: CONSUMER
+      attributes:
+      - name: kafka.cluster.id
+        type: STRING
+      - name: kafka.message.key
+        type: STRING
+      - name: kafka.message.tombstone
+        type: BOOLEAN
+      - name: kafka.offset
+        type: LONG
+      - name: kafka.record.queue_time_ms
+        type: LONG
+      - name: messaging.client.id
+        type: STRING
+      - name: messaging.consumer.group.name
+        type: STRING
+      - name: messaging.destination.name
+        type: STRING
+      - name: messaging.destination.partition.id
+        type: STRING
+      - name: messaging.operation.name
+        type: STRING
+      - name: messaging.operation.type
+        type: STRING
+      - name: messaging.system.name
+        type: STRING
+    - span_kind: PRODUCER
+      attributes:
+      - name: kafka.bootstrap.servers
+        type: STRING
+      - name: kafka.cluster.id
+        type: STRING
+      - name: kafka.message.key
+        type: STRING
+      - name: kafka.message.tombstone
+        type: BOOLEAN
+      - name: kafka.offset
+        type: LONG
+      - name: messaging.client.id
+        type: STRING
+      - name: messaging.destination.name
+        type: STRING
+      - name: messaging.destination.partition.id
+        type: STRING
+      - name: messaging.operation.name
+        type: STRING
+      - name: messaging.operation.type
+        type: STRING
+      - name: messaging.system.name
+        type: STRING
+  - when: otel.instrumentation.kafka-clients-metrics.enabled=true
+    metric_refs:
+    - kafka.consumer.assigned_partitions-e3b3c651
+    - kafka.consumer.bytes_consumed_rate-564d969b
+    - kafka.consumer.bytes_consumed_total-0393b24a
+    - kafka.consumer.commit_rate-a4b078ce
+    - kafka.consumer.commit_sync_time_ns_total-9e1880b8
+    - kafka.consumer.commit_total-24a80858
+    - kafka.consumer.committed_time_ns_total-1ad0caf0
+    - kafka.consumer.connection_close_rate-43e33f77
+    - kafka.consumer.connection_close_total-d3225ce7
+    - kafka.consumer.connection_count-45f83f51
+    - kafka.consumer.connection_creation_rate-c70d12ca
+    - kafka.consumer.connection_creation_total-43f8f997
+    - kafka.consumer.failed_authentication_rate-4fcf4e4f
+    - kafka.consumer.failed_authentication_total-f0126b29
+    - kafka.consumer.failed_reauthentication_rate-5365793d
+    - kafka.consumer.failed_reauthentication_total-16119175
+    - kafka.consumer.failed_rebalance_rate_per_hour-8417e8a7
+    - kafka.consumer.failed_rebalance_total-8bca5b42
+    - kafka.consumer.fetch_rate-de362f7b
+    - kafka.consumer.fetch_total-7db71e3f
+    - kafka.consumer.heartbeat_rate-12d81990
+    - kafka.consumer.heartbeat_total-5c57e127
+    - kafka.consumer.incoming_byte_rate-52dc7629
+    - kafka.consumer.incoming_byte_total-65fddfe4
+    - kafka.consumer.io_ratio-8cc0c241
+    - kafka.consumer.io_time_ns_total-5085f4db
+    - kafka.consumer.io_wait_ratio-50616d5b
+    - kafka.consumer.io_wait_time_ns_total-3d555ba7
+    - kafka.consumer.join_rate-7b04102f
+    - kafka.consumer.join_total-29388d85
+    - kafka.consumer.last_heartbeat_seconds_ago-6abc4330
+    - kafka.consumer.last_poll_seconds_ago-979e631a
+    - kafka.consumer.last_rebalance_seconds_ago-97474aaa
+    - kafka.consumer.network_io_rate-5eda9dd5
+    - kafka.consumer.network_io_total-0518722a
+    - kafka.consumer.outgoing_byte_rate-0975d6cf
+    - kafka.consumer.outgoing_byte_total-303f52b8
+    - kafka.consumer.rebalance_latency_total-c2692cd0
+    - kafka.consumer.rebalance_rate_per_hour-528d47c8
+    - kafka.consumer.rebalance_total-4400dbbd
+    - kafka.consumer.records_consumed_rate-c22ffeb5
+    - kafka.consumer.records_consumed_total-b64b6c62
+    - kafka.consumer.request_rate-2c2d8479
+    - kafka.consumer.request_total-423ebdeb
+    - kafka.consumer.response_rate-ecbf1487
+    - kafka.consumer.response_total-cad6be25
+    - kafka.consumer.select_rate-5492f932
+    - kafka.consumer.select_total-20be5806
+    - kafka.consumer.successful_authentication_no_reauth_total-889db2f2
+    - kafka.consumer.successful_authentication_rate-9fd22b63
+    - kafka.consumer.successful_authentication_total-055dadf5
+    - kafka.consumer.successful_reauthentication_rate-459b149f
+    - kafka.consumer.successful_reauthentication_total-50fad86f
+    - kafka.consumer.sync_rate-403f4044
+    - kafka.consumer.sync_total-59c8eda7
     - kafka.producer.batch_size_avg-ca4755da
     - kafka.producer.batch_size_max-7547e8de
     - kafka.producer.batch_split_rate-bf8c23ec
@@ -12755,67 +12790,15 @@ libraries:
     - kafka.producer.txn_prepare_time_ns_total-af2ea89b
     - kafka.producer.txn_send_offsets_time_ns_total-4e40f91a
     - kafka.producer.waiting_threads-804fb397
-    - messaging.client.consumed.messages-ddd13d28
-    - messaging.client.operation.duration-0ab6c2ce
+    - messaging.client.operation.duration-3a29924c
     - messaging.client.sent.messages-4c9e4d57
-    - messaging.process.duration-2c6cf87e
     spans:
-    - span_kind: CLIENT
-      attributes:
-      - name: kafka.cluster.id
-        type: STRING
-      - name: messaging.batch.message_count
-        type: LONG
-      - name: messaging.client.id
-        type: STRING
-      - name: messaging.consumer.group.name
-        type: STRING
-      - name: messaging.destination.name
-        type: STRING
-      - name: messaging.destination.partition.id
-        type: STRING
-      - name: messaging.operation.name
-        type: STRING
-      - name: messaging.operation.type
-        type: STRING
-      - name: messaging.system.name
-        type: STRING
-    - span_kind: CONSUMER
-      attributes:
-      - name: kafka.cluster.id
-        type: STRING
-      - name: kafka.message.key
-        type: STRING
-      - name: kafka.message.tombstone
-        type: BOOLEAN
-      - name: kafka.offset
-        type: LONG
-      - name: kafka.record.queue_time_ms
-        type: LONG
-      - name: messaging.client.id
-        type: STRING
-      - name: messaging.consumer.group.name
-        type: STRING
-      - name: messaging.destination.name
-        type: STRING
-      - name: messaging.destination.partition.id
-        type: STRING
-      - name: messaging.operation.name
-        type: STRING
-      - name: messaging.operation.type
-        type: STRING
-      - name: messaging.system.name
-        type: STRING
     - span_kind: PRODUCER
       attributes:
-      - name: kafka.bootstrap.servers
-        type: STRING
       - name: kafka.cluster.id
         type: STRING
       - name: kafka.message.key
         type: STRING
-      - name: kafka.message.tombstone
-        type: BOOLEAN
       - name: kafka.offset
         type: LONG
       - name: messaging.client.id
@@ -17142,8 +17125,8 @@ libraries:
   - when: otel.instrumentation.common.messaging.experimental.receive-telemetry.enabled=true
     metric_refs:
     - messaging.client.consumed.messages-40b17dc4
-    - messaging.client.operation.duration-b7b278fe
-    - messaging.client.sent.messages-95b151d6
+    - messaging.client.operation.duration-17a258bf
+    - messaging.client.sent.messages-41bf563f
     - messaging.process.duration-3cf05733
     spans:
     - span_kind: CLIENT
@@ -17196,6 +17179,8 @@ libraries:
         type: STRING
     - span_kind: PRODUCER
       attributes:
+      - name: error.type
+        type: STRING
       - name: messaging.destination.name
         type: STRING
       - name: messaging.message.id
